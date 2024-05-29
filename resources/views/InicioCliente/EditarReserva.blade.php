@@ -37,11 +37,17 @@
 
             <button type="submit">Modificar Reserva</button>
         </form>
+
+        <br>       
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                       {{ $error }}
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
     </div>
 @endsection
-
-@if(session('error'))
-<div class="alert alert-danger">
-    {{ session('error') }}
-</div>
-@endif

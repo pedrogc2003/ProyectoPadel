@@ -20,14 +20,20 @@
                     <p><strong>Numero de Pista:</strong> {{ $pista->numeroPista }}</p>
                     <div class="opciones-reserva">
                     </div>
+                    <a href="{{ route('pista.mostrarFormularioReparacion', $pista->id) }}" class="btn btn-primary">Reparación Pista</a>
                 </div>
             @endforeach
         </div>
+        
+        <br>       
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                       {{ $error }}
+                    @endforeach
+                </ul>
+            </div>
+        @endif
     </div>
 @endsection
-
-@if(session('error'))
-<div class="alert alert-danger">
-    {{ session('error') }}
-</div>
-@endif

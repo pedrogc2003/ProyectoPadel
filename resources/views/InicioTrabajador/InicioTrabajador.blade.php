@@ -4,6 +4,7 @@
     <a href="{{route('InicioTrabajador.AnadirPista')}}" class="btn">Añadir Pista</a>
     <a href="{{route('InicioTrabajador.VerPistas')}}" class="btn">Ver Pistas</a>
     <a href="{{route('InicioTrabajador.InsertaTrabajador')}}" class="btn">Insertar Trabajador</a>
+    <a href="{{route('InicioTrabajador.AnadirReservaTrabajador')}}" class="btn">Insertar Reserva</a>
     <a href="{{ route('Registro.index') }}" class="btn">Cerrar Sesión</a>
 @endsection
 

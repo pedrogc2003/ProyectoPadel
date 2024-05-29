@@ -54,6 +54,8 @@ class User extends Authenticatable
     // Relación: Un usuario puede estar asociado a muchas pistas (relación muchos a muchos)
     public function pistas()
     {
-        return $this->belongsToMany(Pista::class, 'pista_usuario', 'id_user', 'id_pista');
+        return $this->belongsToMany(Pista::class, 'pista_usuario', 'id_user', 'id_pista')
+                    ->withPivot('fecha_inicio', 'fecha_fin')
+                    ->withTimestamps();
     }
 }

@@ -27,6 +27,10 @@ Route::put('/perfil/update/{user}', [UserController::class, 'jugadorEditado'])->
 Route::get('/anadirReserva', [ReservasController::class,'insertaReserva'])->name('InicioCliente.AnadirRerserva')->middleware('auth');
 Route::post('/instarReserva', [ReservasController::class,'guardarReserva'])->name('InicioCliente.InsertaRerserva')->middleware('auth');
 
+Route::get('/anadirReservaTrabajador', [ReservasController::class,'insertaReservaTrabajador'])->name('InicioTrabajador.AnadirReservaTrabajador')->middleware('auth');
+Route::post('/instarReservaTrabajador', [ReservasController::class,'guardarReservaTrabajador'])->name('InicioTrabajador.InsertaRerservaTrabajador')->middleware('auth');
+
+
 Route::get('/verReservas', [ReservasController::class,'verReserva'])->name('InicioCliente.VerRerservas')->middleware('auth');
 Route::delete('/reservas/{reserva}/delete', [ReservasController::class, 'destroy'])->name('reservas.destroy');
 Route::get('/reservas/{reserva}/edit', [ReservasController::class, 'edit'])->name('reservas.edit');
@@ -41,3 +45,7 @@ Route::get('/verVistas', [PistasController::class,'verVistas'])->name('InicioTra
 
 Route::get('/insertaTrabajador', [UserController::class, 'insertaTrabajador'])->name('InicioTrabajador.InsertaTrabajador')->middleware('auth');
 Route::post('/insertarTrabajador', [UserController::class, 'createTrabajador'])->name('InicioTrabajador.create')->middleware('auth');
+
+
+Route::get('/pista/reparar/{pista}', [PistasController::class, 'mostrarFormularioReparacion'])->name('pista.mostrarFormularioReparacion');
+Route::post('/pista/reparar/{pista}', [PistasController::class, 'repararPista'])->name('pista.reparar');

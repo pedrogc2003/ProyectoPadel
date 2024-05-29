@@ -21,8 +21,10 @@ class Pista extends Model
     }
 
     // Relación: Una pista puede estar asociada a muchos usuarios (relación muchos a muchos)
-    public function usuarios()
+    public function users()
     {
-        return $this->belongsToMany(User::class, 'pista_usuario', 'id_pista', 'id_user');
+        return $this->belongsToMany(User::class, 'pista_usuario', 'id_pista', 'id_user')
+                    ->withPivot('fecha_inicio', 'fecha_fin')
+                    ->withTimestamps();
     }
 }

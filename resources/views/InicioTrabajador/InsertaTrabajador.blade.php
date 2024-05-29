@@ -2,9 +2,10 @@
 @extends('layout')
 
 @section('bontones')
-<a href="{{route('InicioTrabajador.InicioTrabajador')}}" class="btn">Inicio</a>
+    <a href="{{route('InicioTrabajador.InicioTrabajador')}}" class="btn">Página Principal</a>
     <a href="{{route('InicioTrabajador.AnadirPista')}}" class="btn">Añadir Pista</a>
     <a href="{{route('InicioTrabajador.VerPistas')}}" class="btn">Ver Pistas</a>
+    <a href="{{route('InicioTrabajador.AnadirReservaTrabajador')}}" class="btn">Insertar Reserva</a>
     <a href="{{ route('Registro.index') }}" class="btn">Cerrar Sesión</a>
 @endsection
 
@@ -38,11 +39,16 @@
 
             <button type="submit">Insertar</button>
         </form>
+
+        <br>       
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                       {{ $error }}
+                    @endforeach
+                </ul>
+            </div>
+        @endif
     </div>
 @endsection
-
-@if(session('error'))
-<div class="alert alert-danger">
-    {{ session('error') }}
-</div>
-@endif

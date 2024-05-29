@@ -3,8 +3,8 @@
 
 
 @section('bontones')
-    <a href="{{route('Registro.IniciarJugador')}}">Iniciar Sesión</a>
-    <a href="{{ route('Registro.RegistroJugador')}}" class="btn">Registrarse</a>
+    <a href="{{route('Registro.IniciarJugador')}}"  class="btn">Iniciar Sesión</a>
+    <a href="{{route('Registro.RegistroJugador')}}" class="btn">Registrarse</a>
 @endsection
 
 
